@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: #0b0506;
+}
+
+body {
+  margin: 0;
+  background: #0b0506;
+  color: #fff7f8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid #ffb000;
+  outline-offset: 3px;
+}
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+}
+
+@keyframes testimonial-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes demo-wheel-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes demo-wave {
+  0%,
+  100% {
+    height: 20%;
+  }
+
+  50% {
+    height: 95%;
+  }
+}
+
+@keyframes demo-scan {
+  from {
+    transform: translateY(-80px);
+  }
+
+  to {
+    transform: translateY(330px);
+  }
+}
+
+@keyframes results-confetti-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -24px, 0) rotate(0deg);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(32px, 310px, 0) rotate(420deg);
+  }
+}
+
+@keyframes arena-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.testimonial-marquee {
+  animation: testimonial-marquee 38s linear infinite;
+}
+
+.demo-wheel {
+  background: conic-gradient(
+    from 24deg,
+    #ff1e3c 0deg 90deg,
+    #240d10 90deg 180deg,
+    #ffb000 180deg 270deg,
+    #b80f27 270deg 360deg
+  );
+}
+
+.demo-wheel-active {
+  animation: demo-wheel-spin 1.2s cubic-bezier(0.62, 0.03, 0.22, 1) infinite;
+}
+
+.demo-wave-bar {
+  animation: demo-wave 1s ease-in-out infinite;
+}
+
+.demo-scan {
+  animation: demo-scan 2.2s ease-in-out infinite;
+}
+
+.results-confetti-piece {
+  animation: results-confetti-fall 1.6s ease-out both;
+}
+
+.arena-loading-spinner {
+  animation: arena-loading-spin 0.85s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-marquee,
+  .demo-wheel-active,
+  .demo-wave-bar,
+  .demo-scan,
+  .results-confetti-piece,
+  .arena-loading-spinner {
+    animation: none;
+  }
+}
