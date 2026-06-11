@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import { AppShell } from "../components/layout/AppShell";
 import "./globals.css";
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
+        <Script src="https://kit.fontawesome.com/d24d18c78a.js" crossOrigin="anonymous" strategy="afterInteractive" />
         <AppShell>{children}</AppShell>
       </body>
     </html>
