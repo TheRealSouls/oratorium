@@ -94,6 +94,36 @@ npm run start    # serve the production build
 npm test         # run Vitest tests
 ```
 
+## Deploying On Render
+
+Deploy Oratorium as a **Render Web Service**, not a Static Site.
+
+This app uses Next.js API routes for audio upload, transcription, AI evaluation, scoring, and result lookup. A Static Site publish directory such as `.next`, `out`, or `dist` will not run those server routes.
+
+Recommended Render settings:
+
+```txt
+Service type: Web Service
+Repository: TheRealSouls/oratorium
+Branch: main
+Root Directory: leave blank or use .
+Runtime: Node
+Build Command: npm ci && npm run build
+Start Command: npm start
+Publish Directory: leave blank / not applicable
+```
+
+Required Render environment variables:
+
+```txt
+OPENAI_API_KEY=your real server-side OpenAI key
+OPENAI_EVALUATION_MODEL=gpt-4o-mini
+NODE_ENV=production
+NODE_VERSION=22
+```
+
+The repository includes `render.yaml`, so Render can also create the correct Web Service from Blueprint. Keep `OPENAI_API_KEY` configured in Render's environment settings; do not commit real API keys.
+
 ## Scoring System
 
 Every attempt is scored from 0 to 100 across:
@@ -216,4 +246,3 @@ Covered areas include:
 The app currently focuses on the core speaking loop and uses mock persistence for attempts, leaderboard entries, and profile data. Firebase can be added after the main loop is stable.
 
 The tiny stage is built. The spotlight is on. The wheel is waiting.
-
