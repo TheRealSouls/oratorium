@@ -55,7 +55,7 @@ export default function HomePage() {
         <div className="relative mx-auto grid min-h-[calc(100vh-81px)] max-w-6xl content-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_380px] lg:px-8">
           <div className="min-w-0 max-w-[calc(100vw-2rem)] sm:max-w-3xl">
             <h1 className="max-w-[12ch] text-4xl font-semibold leading-[1.04] tracking-normal text-white sm:max-w-3xl sm:text-7xl">
-              Own the libs.
+              Train your voice under pressure.
             </h1>
             <p className="mt-6 max-w-[calc(100vw-2rem)] text-lg leading-8 text-arena-textMuted sm:max-w-2xl">
               Oratorium turns public speaking practice into a competitive training loop: random topics, timed recordings,
